@@ -6,6 +6,7 @@
 <html>
 
 <head>
+	<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 	<title>Home</title>
 </head>
 
@@ -18,12 +19,36 @@
 <div id="wrapper">
     
     <div id="first">
+    
+    <h1 align="center">Block <br>
+    for <br>
+    quick <br>
+    fault <br>
+    submit</h1>
+    
     </div>
+    
+    
     
     <div id="second">
+    
+     <h1 align="center">Block <br>
+    for <br>
+    urgent <br>
+    to do <br>
+    faults</h1>
+    
     </div>
     
-    <div id="third"></div>
+    
+    
+    <div id="third">
+    
+     <h1 align="center">Block <br>
+    for <br>
+    statistict</h1>
+    
+    </div>
     
 </div>
 
@@ -36,12 +61,13 @@
 
 </html>
 
-
+ 
 
 <style type="text/css">
 div {
     display: block;
 }
+
 #wrapper {
     width: 100%;
     height:100%;
