@@ -24,9 +24,9 @@
     
     <h1>Submit fault</h1>
         
-       <form:form action="saveFault" method="post" modelAttribute="fault">
+        <form:form action="updateFault" method="post" modelAttribute="fault">
         <table>
-        	
+        	<form:hidden path="id"/>
             
             <tr>
                 <td>Date:</td>
@@ -124,15 +124,7 @@
             </tr>
         </table>
         </form:form>
-        
-	
-		
-					
-                    
-		
-	
-	
-        
+    
     </div>
     
     <div id="second"></div>

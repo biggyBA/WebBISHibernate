@@ -2,8 +2,10 @@ package ba.biggy.dao;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import ba.biggy.model.Fault;
@@ -48,9 +50,10 @@ public class FaultDAOImpl implements FaultDAO {
 	@Override
 	public Fault getFaultById(int id) {
 		Session session = this.sessionFactory.getCurrentSession();
-		Fault fault = (Fault) session.load(Fault.class, new Integer(id));
-		session.update(fault);
-		return fault;
+		Criteria crit = session.createCriteria(Fault.class);
+		crit.add(Restrictions.eq("id", id));
+		
+		return (Fault) crit.uniqueResult();
 	}
 
 

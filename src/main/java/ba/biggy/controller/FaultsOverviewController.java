@@ -1,26 +1,24 @@
 package ba.biggy.controller;
 
-import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ba.biggy.dao.FaultDAO;
 import ba.biggy.model.Fault;
 import ba.biggy.service.FaultService;
 
 @Controller
 public class FaultsOverviewController {
 
+	
 	private FaultService faultService;
 	
 	@Autowired(required = true)
@@ -55,17 +53,29 @@ public class FaultsOverviewController {
 	}
 	
 	
+	@RequestMapping(value= "editFault/updateFault", method = RequestMethod.POST)
+	public String updateFault(@ModelAttribute("fault") Fault fault){
+			this.faultService.updateFault(fault);
+			return "redirect:/";
+	}
 	
 	
-	@RequestMapping(value = "/editFault/{id}")
+	
+	@RequestMapping("/editFault/{id}")
 	public String editFault(@PathVariable("id") int id, Model model) {
-		
 		model.addAttribute("fault", this.faultService.getFaultById(id));
 		return "editFaultPage";
 	}
 	
 	
-	
+	@RequestMapping(value = "/editFault")
+	public ModelAndView editFault(HttpServletRequest request) {
+		int faultId = Integer.parseInt(request.getParameter("id"));
+		Fault fault = this.faultService.getFaultById(faultId);
+		ModelAndView model = new ModelAndView("editFaultPage");
+		model.addObject("fault", fault);
+		return model;
+	}
 	
 	
 	

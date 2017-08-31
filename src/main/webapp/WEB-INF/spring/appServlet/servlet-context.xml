@@ -32,22 +32,23 @@
 	</beans:bean>
 	
 	
-	<!-- Local database -->
+	<!-- Local database 
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url" value="jdbc:mysql://localhost:3306/webbishibernatedb" />
 		<beans:property name="username" value="root" />
 		<beans:property name="password" value="admin" />
 	</beans:bean>
+	-->
 	
 	
-	<!-- Online database 
+	<!-- Online database -->
 	<beans:bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<beans:property name="url" value="jdbc:mysql://localhost:3306/biggyba_webbishibernatedb" />
+		<beans:property name="url" value="jdbc:mysql://localhost:3306/biggyba_webbisdb" />
 		<beans:property name="username" value="biggyba_webbis" />
 		<beans:property name="password" value="#u+0#?@s$_GX" />
-	</beans:bean> -->
+	</beans:bean> 
 	
 	
 	
@@ -56,7 +57,6 @@
 		<beans:property name="dataSource" ref="dataSource" />
 		<beans:property name="annotatedClasses">
 			<beans:list>
-				<beans:value>ba.biggy.model.Person</beans:value>
 				<beans:value>ba.biggy.model.Fault</beans:value>
 			</beans:list>
 		</beans:property>
@@ -64,19 +64,9 @@
 			<beans:props>
 				<beans:prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect
 				</beans:prop>
-				<beans:prop key="hibernate.show_sql">true</beans:prop>
+				<beans:prop key="hibernate.show_sql">false</beans:prop>
 			</beans:props>
 		</beans:property>
-	</beans:bean>
-	
-	
-	<beans:bean id="personDAO" class="ba.biggy.dao.PersonDAOImpl">
-		<beans:property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
-	</beans:bean>
-	
-	
-	<beans:bean id="personService" class="ba.biggy.service.PersonServiceImpl">
-		<beans:property name="personDAO" ref="personDAO"></beans:property>
 	</beans:bean>
 	
 	

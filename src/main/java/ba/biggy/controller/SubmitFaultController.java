@@ -38,7 +38,7 @@ public class SubmitFaultController {
 				this.faultService.addFault(fault);
 			}else{
 				//update fault
-				//this.faultService.updateFault(fault);
+				this.faultService.updateFault(fault);
 			}
 			
 			return "redirect:/";
