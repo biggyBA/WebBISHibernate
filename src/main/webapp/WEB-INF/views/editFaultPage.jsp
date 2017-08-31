@@ -28,6 +28,8 @@
         <form:form action="updateFault" method="post" modelAttribute="fault">
         <table>
         	<form:hidden path="id"/>
+        	
+        	<form:input path="status" type="hidden" value="UrgentToDo"/>
             
             <tr>
                 <td>Date:</td>

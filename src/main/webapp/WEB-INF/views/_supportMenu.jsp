@@ -72,7 +72,7 @@
 }
 
 .container a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: WhiteSmoke;
 }
 
 .dropdown-content {
