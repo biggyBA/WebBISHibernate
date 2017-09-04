@@ -22,7 +22,7 @@
 <c:if test="${!empty faultsToDo}">
 	<table >
 	<tr>
-				<th>id</th>
+				
 				<th>Date</th>
                 <th>Time</th>
                 <th>Product type</th>
@@ -38,7 +38,7 @@
 	</tr>
 	<c:forEach items="${faultsToDo}" var="fault">
 		<tr>
-					<td>${fault.id}</td>
+					
 					<td>${fault.date}</td>
                     <td>${fault.time}</td>
                     <td>${fault.ident}</td>
