@@ -44,7 +44,7 @@ public class SubmitFaultController {
 				this.faultService.updateFault(fault);
 			}
 			
-			return "redirect:/";
+			return "redirect:/faultsOverview";
 			
 	}
 	

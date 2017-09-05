@@ -49,14 +49,14 @@ public class FaultsOverviewController {
 	@RequestMapping(value = "/deleteFault/{id}")
 	public String deleteFault(@PathVariable("id") int id) {
 	    this.faultService.deleteFault(id);
-	    return "redirect:/";
+	    return "redirect:/faultsOverview";
 	}
 	
 	
 	@RequestMapping(value= "editFault/updateFault", method = RequestMethod.POST)
 	public String updateFault(@ModelAttribute("fault") Fault fault){
 			this.faultService.updateFault(fault);
-			return "redirect:/";
+			return "redirect:/faultsOverview";
 	}
 	
 	

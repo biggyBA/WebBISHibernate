@@ -5,15 +5,15 @@
 
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Submit fault</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<title>Submit fault</title>
 </head>
 <body>
 
 <jsp:include page="_supportMenu.jsp" />
 
 <c:url var="addAction" value="/saveFault" ></c:url>
-
+<div id="wrapper">
 <form:form action="${addAction}" commandName="fault">
 
 			
@@ -39,9 +39,9 @@
 			<!-- Status -->
 			<form:input path="status" type="hidden" value="UrgentToDo"/>
 				
-				
+<div id="tableDiv-submitFault">				
 
-		<table>
+		<table id="table-submitFault">
         
             <tr>
                 <td>Product type:</td>
@@ -127,14 +127,73 @@
             
             
             <tr>
-                <td colspan="2" align="center"><input type="submit" value="Save"></td>
+                <td colspan="2" align="center"><input type="submit" value="Submit fault"></td>
             </tr>
         </table>
-	
+	</div>
 </form:form>
 
-
+</div>
 
 
 </body>
+
+<style type="text/css">
+
+body{
+   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+   background: linear-gradient(to right, #25c481, #25b7c4);
+}
+
+#wrapper {
+    width: 100%;
+    height:100%;
+  	left: 50%;
+   	position: absolute;
+   	margin: 0 0 0 -350px;
+   	padding-top: 30px;
+}
+
+#table-submitFault{
+  width:100%;
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+
+#tableDiv-submitFault{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+  width: 600px;
+}
+
+table{
+  width:100%;
+}
+ 
+ td{
+  padding: 10px;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+input {
+    width: 400px;
+}
+
+textarea {
+    width: 400px;
+}
+
+select {
+    width: 400px;
+}
+
+</style>
+
+
 </html>

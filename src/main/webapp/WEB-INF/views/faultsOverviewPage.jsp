@@ -6,7 +6,7 @@
 <html>
 
 <head>
-	
+	<link href="<c:url value="/resources/css/style.css" />" rel="stylesheet">
 	<title>Faults overview</title>
 </head>
 
@@ -16,11 +16,11 @@
 	<jsp:include page="_supportMenu.jsp" />
 
 
-<div align="left">
-            <h1>Faults overview</h1>
+<div id="tableDiv-faultsOverview">
+            
             
 <c:if test="${!empty faultsToDo}">
-	<table >
+	<table>
 	<tr>
 				
 				<th>Date</th>
@@ -69,21 +69,47 @@
 	
 
 </body>
+
+<style type="text/css">
+
+#tableDiv-faultsOverview{
+  background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+  background: linear-gradient(to right, #25c481, #25b7c4);
+  font-family: 'Roboto', sans-serif;
+}
+
+table{
+  width:100%;
+  table-layout: fixed;
+}
+
+th{
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 12px;
+  color: #fff;
+  text-transform: uppercase;
+ }
+ 
+ td{
+  padding: 15px;
+  text-align: left;
+  vertical-align:middle;
+  font-weight: 300;
+  font-size: 12px;
+  color: #fff;
+  border-bottom: solid 1px rgba(255,255,255,0.1);
+}
+
+body{
+   background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+   background: linear-gradient(to right, #25c481, #25b7c4);
+}
+
+</style>
+
 </html>
 
 
 
-<style type="text/css">
-
-table{
-   border: 1px solid;
-   border-collapse: collapse;
-   width: 100%;
-}
-
-tr, th, td{
-	border: 1px solid;
-	border-collapse: collapse;
-}
-
-</style>
