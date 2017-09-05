@@ -46,7 +46,7 @@
     
      <h1 align="center">Block <br>
     for <br>
-    statistict</h1>
+    statistics</h1>
     
     </div>
     
